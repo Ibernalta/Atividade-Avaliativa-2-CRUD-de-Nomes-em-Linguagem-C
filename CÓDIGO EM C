@@ -1,0 +1,210 @@
+*******************************************************************************/
+\\UNIVERSIDADE FEDERAL DO MARANHÃO
+\\BACHARELADO INTERDISCIPLINAR EM CIÊNCIA E TECNOLOGIA
+\\LABORATÓRIO DE PROGRAMAÇÃO
+\\PROF.: RONDINELI SEBA
+\\ALUNOS:
+ARMANDDO FURTADO ROCHA (2022024002) 
+MILENA MOTA ALVES (2022039918)
+WERVERTON FERREIRA DA SILVA (2023080946)
+\\ATIVIDADE P2
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_REGISTROS 50
+#define MAX_LETRAS 30
+
+int main() {
+
+    char nomes[MAX_REGISTROS][MAX_LETRAS];
+    char nome[MAX_LETRAS];
+    char novoNome[MAX_LETRAS];
+
+    int op;
+    int i;
+    int posicao;
+    int repetido;
+
+    for(i = 0; i < MAX_REGISTROS; i++) {
+        nomes[i][0] = '\0';
+    }
+
+    while(1) {
+
+        printf("\n1 - Incluir");
+        printf("\n2 - Buscar");
+        printf("\n3 - Modificar");
+        printf("\n4 - Apagar");
+        printf("\n5 - Listar");
+        printf("\n0 - Sair");
+        printf("\nOpcao: ");
+        scanf("%d", &op);
+
+        if(op == 0) {
+            break;
+        }
+
+        switch(op) {
+
+        case 1:
+
+            repetido = 1;
+
+            while(repetido) {
+
+                repetido = 0;
+
+                printf("Nome: ");
+                scanf(" %29[^\n]", nome);
+
+                for(i = 0; i < MAX_REGISTROS; i++) {
+
+                    if(strcmp(nomes[i], nome) == 0) {
+                        repetido = 1;
+                    }
+                }
+
+                if(repetido) {
+                    printf("Nome ja existe. Digite outro.\n");
+                }
+            }
+
+            posicao = -1;
+
+            for(i = 0; i < MAX_REGISTROS; i++) {
+
+                if(nomes[i][0] == '\0') {
+                    posicao = i;
+                    break;
+                }
+            }
+
+            if(posicao == -1) {
+                printf("Banco cheio.\n");
+            }
+            else {
+                strcpy(nomes[posicao], nome);
+                printf("Nome cadastrado.\n");
+            }
+
+            break;
+
+        case 2:
+
+            printf("Nome para busca: ");
+            scanf(" %29[^\n]", nome);
+
+            posicao = -1;
+
+            for(i = 0; i < MAX_REGISTROS; i++) {
+
+                if(strcmp(nomes[i], nome) == 0) {
+                    posicao = i;
+                    break;
+                }
+            }
+
+            if(posicao == -1) {
+                printf("Nome nao encontrado.\n");
+            }
+            else {
+                printf("Encontrado na posicao %d\n", posicao);
+            }
+
+            break;
+
+        case 3:
+
+            printf("Nome a modificar: ");
+            scanf(" %29[^\n]", nome);
+
+            posicao = -1;
+
+            for(i = 0; i < MAX_REGISTROS; i++) {
+
+                if(strcmp(nomes[i], nome) == 0) {
+                    posicao = i;
+                    break;
+                }
+            }
+
+            if(posicao == -1) {
+
+                printf("Nome nao encontrado.\n");
+            }
+            else {
+
+                printf("Novo nome: ");
+                scanf(" %29[^\n]", novoNome);
+
+                repetido = 0;
+
+                for(i = 0; i < MAX_REGISTROS; i++) {
+
+                    if(strcmp(nomes[i], novoNome) == 0) {
+                        repetido = 1;
+                    }
+                }
+
+                if(repetido) {
+
+                    printf("Esse nome ja existe.\n");
+                }
+                else {
+
+                    strcpy(nomes[posicao], novoNome);
+                    printf("Nome alterado.\n");
+                }
+            }
+
+            break;
+
+        case 4:
+
+            printf("Nome para apagar: ");
+            scanf(" %29[^\n]", nome);
+
+            posicao = -1;
+
+            for(i = 0; i < MAX_REGISTROS; i++) {
+
+                if(strcmp(nomes[i], nome) == 0) {
+                    posicao = i;
+                    break;
+                }
+            }
+
+            if(posicao == -1) {
+
+                printf("Nome nao encontrado.\n");
+            }
+            else {
+
+                nomes[posicao][0] = '\0';
+                printf("Nome apagado.\n");
+            }
+
+            break;
+
+        case 5:
+
+            printf("\nLista de nomes:\n");
+
+            for(i = 0; i < MAX_REGISTROS; i++) {
+
+                if(nomes[i][0] != '\0') {
+                    printf("%d - %s\n", i, nomes[i]);
+                }
+            }
+
+            break;
+
+        default:
+
+            printf("Opcao invalida.\n");
+        }
+    }
+
+    return 0;
+}
