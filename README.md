@@ -1,22 +1,19 @@
-# Atividade Avaliativa 2 – CRUD de Nomes em Linguagem C
+ Atividade Avaliativa 2 – CRUD de Nomes em Linguagem C
 
-## 📚 Disciplina
+Disciplina
 
-**Laboratório de Programação**
-**Curso:** Engenharia da Computação – UFMA
-**Professor:** Rondineli Seba Salomão
+Laboratório de Programação
+Curso: Engenharia da Computação – UFMA
+Professor: Rondineli Seba Salomão
 
-## 👨‍💻 Integrantes
+Integrantes
 
-* Nome: ______________________________________
-* Matrícula: _________________________________
-* Curso: Engenharia da Computação
+ARMANDDO FURTADO ROCHA (2022024002) 
+MILENA MOTA ALVES (2022039918)
+WERVERTON FERREIRA DA SILVA (2023080946)
+Curso: Engenharia da Computação
 
-*(Adicionar os demais integrantes, caso o trabalho seja realizado em dupla ou trio.)*
-
----
-
-# 📋 Descrição do Projeto
+Descrição do Projeto
 
 Este projeto consiste no desenvolvimento de um sistema CRUD (Create, Read, Update e Delete) utilizando a linguagem C, com o objetivo de aplicar os conceitos estudados na disciplina até o conteúdo de matrizes.
 
@@ -24,7 +21,7 @@ O programa simula um pequeno banco de dados textual utilizando uma matriz de car
 
 ---
 
-# 🎯 Objetivos
+Objetivos
 
 * Utilizar variáveis, estruturas de decisão e repetição;
 * Manipular vetores e matrizes;
@@ -34,7 +31,7 @@ O programa simula um pequeno banco de dados textual utilizando uma matriz de car
 
 ---
 
-# 🗄️ Estrutura de Dados
+Estrutura de Dados
 
 O armazenamento dos registros é realizado por meio de uma matriz estática de caracteres:
 
@@ -52,13 +49,13 @@ Onde:
 
 ---
 
-# ⚙️ Funcionalidades
+Funcionalidades
 
-## 1. Incluir Nome
+1. Incluir Nome
 
 Permite cadastrar um novo nome no sistema.
 
-### Regras:
+Regras:
 
 * O nome não pode estar previamente cadastrado.
 * O sistema realiza uma busca para verificar duplicidade.
@@ -68,11 +65,11 @@ Permite cadastrar um novo nome no sistema.
 
 ---
 
-## 2. Buscar Nome
+2. Buscar Nome
 
 Permite localizar um nome cadastrado.
 
-### Regras:
+Regras:
 
 * O usuário informa o nome desejado.
 * É realizada uma busca linear na matriz.
@@ -85,11 +82,11 @@ Nome não encontrado.
 
 ---
 
-## 3. Modificar Nome
+3. Modificar Nome
 
 Permite alterar um registro existente.
 
-### Regras:
+Regras:
 
 * O usuário informa o nome que deseja alterar.
 * Caso o nome seja encontrado, o sistema solicita um novo nome.
@@ -98,11 +95,11 @@ Permite alterar um registro existente.
 
 ---
 
-## 4. Apagar Nome
+4. Apagar Nome
 
 Permite remover um registro.
 
-### Regras:
+Regras:
 
 * O usuário informa o nome que deseja excluir.
 * Caso seja encontrado, a posição é marcada como vazia.
@@ -114,7 +111,7 @@ Permite remover um registro.
 
 ---
 
-## 5. Listar Todos os Registros
+5. Listar Todos os Registros
 
 Exibe todos os nomes cadastrados e seus respectivos índices.
 
@@ -128,21 +125,21 @@ Exibe todos os nomes cadastrados e seus respectivos índices.
 
 ---
 
-# 🛠️ Bibliotecas Utilizadas
+Bibliotecas Utilizadas
 
 ```c
 #include <stdio.h>
 #include <string.h>
 ```
 
-### Funções permitidas da biblioteca `string.h`
+Funções permitidas da biblioteca `string.h`
 
 * `strcmp()`
 * `strcpy()`
 
 ---
 
-# 📌 Estrutura do Menu
+Estrutura do Menu
 
 ```text
 ===== MENU =====
@@ -159,7 +156,7 @@ Escolha uma opção:
 
 ---
 
-# 🚀 Como Compilar
+Como Compilar
 
 Utilizando o GCC:
 
@@ -169,7 +166,7 @@ gcc atividade2.c -o atividade2
 
 ---
 
-# ▶️ Como Executar
+Como Executar
 
 Linux/Mac:
 
@@ -185,7 +182,7 @@ atividade2.exe
 
 ---
 
-# 📖 Conceitos Aplicados
+Conceitos Aplicados
 
 * Variáveis
 * Entrada e saída de dados
@@ -199,7 +196,7 @@ atividade2.exe
 
 ---
 
-# 📅 Informações da Atividade
+Informações da Atividade
 
 Trabalho desenvolvido para a **Atividade Avaliativa 2** da disciplina **Laboratório de Programação**, ministrada pelo professor **Rondineli Seba Salomão**, no curso de Engenharia da Computação da Universidade Federal do Maranhão (UFMA).
 
